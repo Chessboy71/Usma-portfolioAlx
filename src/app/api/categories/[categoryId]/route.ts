@@ -9,9 +9,10 @@ export async function PATCH(
   try {
     const { userId } = auth();
     const body = await req.json();
+    console.log(params.categoryId);
 
     const { name, billboardId } = body;
-
+    console.log(body);
     if (!userId) {
       return new NextResponse('Unauthicated', { status: 401 });
     }
