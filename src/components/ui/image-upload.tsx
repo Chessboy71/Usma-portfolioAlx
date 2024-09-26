@@ -31,8 +31,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
   }
 
   const onUpload = (result: any) => {
-    const newImg = result.info.secure_url;
-    onChange(newImg);
+    onChange(result.info.secure_url);
   };
 
   return (

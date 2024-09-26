@@ -91,7 +91,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       setLoading(true);
       await axios.delete(`../../../api/products/${params.productId}`);
       router.refresh();
-      router.push('/');
+      router.push('/dashboard/products');
       toast.success('Product deleted');
     } catch (error) {
       toast.error('Something went wrong');

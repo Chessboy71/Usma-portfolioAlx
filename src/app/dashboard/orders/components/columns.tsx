@@ -5,22 +5,26 @@ import Link from 'next/link';
 
 // This type is used to define the shape of our data.
 // You can use a Zod schema here if you want.
-export type CategoriesColumns = {
+export type OrderColumn = {
   id: string;
   name: string;
-  billboardLabel: string;
+  phone: string;
+  address: string;
+  progress: string;
+  price: string;
+  products: string;
   createdAt: string;
 };
 
-export const columns: ColumnDef<CategoriesColumns>[] = [
+export const columns: ColumnDef<OrderColumn>[] = [
   {
     accessorKey: 'name',
     header: 'Name',
     cell: ({ row }) => {
-      const categoryId = row.original.id;
+      const orderId = row.original.id;
       return (
         <Link
-          href={`/dashboard/categories/${categoryId}`}
+          href={`/dashboard/orders/${orderId}`}
           className="hover:text-slate-900">
           {' '}
           {row.getValue('name')}{' '}
@@ -29,9 +33,24 @@ export const columns: ColumnDef<CategoriesColumns>[] = [
     },
   },
   {
-    accessorKey: 'billboard',
-    header: 'Billboard',
-    cell: ({ row }) => row.original.billboardLabel,
+    accessorKey: 'phone',
+    header: 'Phone',
+  },
+  {
+    accessorKey: 'address',
+    header: 'Address',
+  },
+  {
+    accessorKey: 'progress',
+    header: 'Order Progress',
+  },
+  {
+    accessorKey: 'price',
+    header: 'Total Price',
+  },
+  {
+    accessorKey: 'products',
+    header: 'Products',
   },
   {
     accessorKey: 'createdAt',

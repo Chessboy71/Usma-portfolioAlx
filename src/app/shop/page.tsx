@@ -1,14 +1,17 @@
-import { NavBar } from '@/components/NavBar';
-import { Heading } from '@/components/ui/Heading';
 import ShopHero from './component/ShopHero';
-import { ProductSection } from '@/components/ProductSection/ProductSection';
-import { Products } from './component/Products';
+// import { Products } from './component/Products';
+import Featured from './component/Featured';
+import ProductSection from './component/ProductSection';
+import CategorySection from './component/CategorySection';
 
 export default function Shop() {
   return (
     <div>
       <ShopHero />
-      <Products />
+      <Featured />
+      {/* <Products /> */}
+      <ProductSection />
+      <CategorySection />
     </div>
   );
 }

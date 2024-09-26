@@ -64,7 +64,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
       setLoading(true);
       await axios.delete(`../../../api/billboards/${params.billboardId}`);
       router.refresh();
-      router.push('/');
+      router.push('/dashboard/billboards');
       toast.success('Billboard deleted');
     } catch (error) {
       toast.error(
@@ -134,7 +134,7 @@ export const BillboardForm: React.FC<BillboardFormProps> = ({
                   <ImageUpload
                     value={field.value ? [field.value] : []}
                     disabled={loading}
-                    onChage={(url) => field.onChange(url)}
+                    onChange={(url) => field.onChange(url)}
                     onRemove={() => field.onChange('')}
                   />
                 </FormControl>

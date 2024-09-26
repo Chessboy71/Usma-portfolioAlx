@@ -3,15 +3,16 @@ import { ProductClient } from './components/client';
 import { ProductsColumn } from './components/columns';
 import { format } from 'date-fns';
 
+export const formatter = new Intl.NumberFormat('us', {
+  style: 'currency',
+  currency: 'DZD',
+});
+
 const ProductsPage = async () => {
   const products = await prismadb.product.findMany({
     include: {
       category: true,
     },
-  });
-  const formatter = new Intl.NumberFormat('us', {
-    style: 'currency',
-    currency: 'DZD',
   });
 
   const formattedProducts: ProductsColumn[] = products.map((p) => ({

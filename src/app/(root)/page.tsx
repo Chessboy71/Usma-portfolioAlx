@@ -1,6 +1,6 @@
 import { Hero } from '@/components/Hero';
 import { News } from '@/components/News/News';
-import { ProductSection } from '@/components/ProductSection/ProductSection';
+// import { ProductSection } from '@/components/ProductSection/ProductSection';
 import { NextFixtures } from '@/components/NextFixtures/NextFixtures';
 import { ToasterProvider } from '../../../providers/toast-provider';
 import { Separator } from '@/components/ui/separator';
@@ -15,7 +15,7 @@ export default function Home() {
       <NavBar />
       <Hero />
       <News />
-      <ProductSection />
+      {/* <ProductSection /> */}
       <Separator className="w-[90vw] ml-auto opacity-50" />
       <NextFixtures />
       <Separator className="w-[90vw] ml-auto opacity-50" />

@@ -1,12 +1,12 @@
-import { Footer } from '@/components/Footer';
-import { NavBar } from '@/components/NavBar';
+import ShopNav from './component/ShopNav';
+import ShopFooter from './component/ShopFooter';
 
 export default function shopLayout({ children }) {
   return (
-    <div className="overflow-x-hidden">
-      <NavBar />
+    <div className="overflow-x-hidden bg-white">
+      <ShopNav />
       {children}
-      <Footer />
+      <ShopFooter />
     </div>
   );
 }
