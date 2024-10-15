@@ -6,7 +6,7 @@ import { format } from 'date-fns';
 const BillboardsPage = async () => {
   const billboards = await prismadb.billboard.findMany();
 
-  const formattedBillboard = billboards.map((b) => ({
+  const formattedBillboard: BillbaordColumn[] = billboards.map((b) => ({
     id: b.id,
     label: b.label,
     createdAt: format(b.createdAt, 'MMMM do, yyyy'),

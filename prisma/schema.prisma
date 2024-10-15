@@ -79,3 +79,9 @@ model OrderItem {
   quantity Decimal 
 }
 
+model Settings {
+  id String @id @default(uuid())
+  heroPicture String
+  featuredImage String
+}
+

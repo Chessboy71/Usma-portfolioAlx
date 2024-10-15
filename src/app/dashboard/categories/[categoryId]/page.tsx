@@ -1,5 +1,6 @@
 import prismadb from '@/lib/prismadb';
 import { CategoryForm } from './components/category-form';
+import { Billboard } from '@prisma/client';
 
 const CategoriesPage = async ({
   params,
@@ -11,7 +12,8 @@ const CategoriesPage = async ({
       id: params.categoryId,
     },
   });
-  const billboards = await prisma?.billboard.findMany();
+  const billboards: Billboard[] = await prismadb.billboard.findMany();
+
   return (
     <div className="flex-col">
       <div className="flex-1 space-y-4 p-8">

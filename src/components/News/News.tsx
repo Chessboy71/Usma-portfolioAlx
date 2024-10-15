@@ -1,17 +1,13 @@
 import {
   Carousel,
   CarouselContent,
-  CarouselItem,
   CarouselNext,
 } from '@/components/ui/carousel';
-import { Button } from '../ui/button';
-import Image from 'next/image';
 import articleImage1 from '@/../../public/2.jpg';
 import articleImage2 from '@/../../public/3.jpg';
 import articleImage3 from '@/../../public/4.jpg';
 import articleImage4 from '@/../../public/5.jpg';
 import { ArticleCard } from './ArticleCard';
-import { title } from 'process';
 
 export const News = () => {
   const articles = [

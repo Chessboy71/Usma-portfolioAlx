@@ -1,10 +1,9 @@
 import prismadb from '@/lib/prismadb';
 import { ProductCard } from './ProductCard';
-import { Button } from '@/components/ui/button';
 import Image from 'next/image';
 
 const CategorySection = async () => {
-  const category = await prismadb.category.findFirst({
+  const category = await prismadb.category.findMany({
     include: {
       billboard: true,
     },
@@ -15,7 +14,7 @@ const CategorySection = async () => {
       images: true,
     },
     where: {
-      categoryId: category?.id,
+      categoryId: category[1]?.id,
     },
 
     take: 4,
@@ -28,7 +27,7 @@ const CategorySection = async () => {
           className="h-full w-full bg-black opacity-40
          z-20 absolute top-0 left-0 rounded-3xl"></div>
         <Image
-          src={category?.billboard.imageUrl || ''}
+          src={category[1]?.billboard.imageUrl || ''}
           alt="CategoryImg"
           className="w-full h-[20vw] object-cover z-0 rounded-3xl"
           width={500}
@@ -37,7 +36,7 @@ const CategorySection = async () => {
         <h4
           className="absolute top-1/2 left-1/2 
         -translate-x-1/2 -translate-y-1/2 text-white font-pop text-3xl font-bold z-30">
-          {category?.name}
+          {category[1]?.name}
         </h4>
       </div>
       <div className="flex flex-row flex-wrap mt-6">

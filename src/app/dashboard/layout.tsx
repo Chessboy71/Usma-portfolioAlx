@@ -1,10 +1,9 @@
-import { SignedIn, SignedOut, SignInButton, SignUpButton } from '@clerk/nextjs';
+import { SignedIn, SignedOut, SignInButton } from '@clerk/nextjs';
 import DashboardNavBar from './components/DashboardNavBar';
 import { Toaster } from 'react-hot-toast';
 import { Button } from '@/components/ui/button';
 import logo from '@/../../public/logo.png';
 import Image from 'next/image';
-import { Heading } from '@/components/ui/Heading';
 
 export const metadata = {
   title: 'Next.js',

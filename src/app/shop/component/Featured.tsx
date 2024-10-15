@@ -21,6 +21,7 @@ const Featured = async () => {
       category: true,
     },
   });
+  const imgFeatured = await prismadb.settings.findFirst();
 
   return (
     <div className="py-12 ml-12">
@@ -33,8 +34,10 @@ const Featured = async () => {
 
       <div className="mt-6 w-screen flex flex-row">
         <Image
-          src={imgFeatured}
+          src={imgFeatured?.featuredImage || ''}
           alt="Image for the featured section"
+          height={2000}
+          width={2000}
           className="rounded-[35px] w-1/2 h-[80vh] object-cover"
         />
         <div className="w-[40vw] h-[80vh] justify-center">

@@ -1,3 +1,4 @@
+import prismadb from '@/lib/prismadb';
 import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
@@ -21,7 +22,7 @@ export async function POST(req: Request) {
       return new NextResponse('image is required', { status: 400 });
     }
 
-    const billboard = await prisma?.billboard.create({
+    const billboard = await prismadb.billboard.create({
       data: {
         label,
         imageUrl,
@@ -35,9 +36,9 @@ export async function POST(req: Request) {
   }
 }
 
-export async function GET(req: Request) {
+export async function GET() {
   try {
-    const billboards = await prisma?.billboard.findMany();
+    const billboards = await prismadb.billboard.findMany();
 
     return NextResponse.json(billboards);
   } catch (error) {

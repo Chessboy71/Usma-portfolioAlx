@@ -1,6 +1,6 @@
 import { CarouselItem } from '@/components/ui/carousel';
 import { Button } from '../ui/button';
-import Image from 'next/image';
+import Image, { StaticImageData } from 'next/image';
 
 interface ArticleCardProps {
   key: number;

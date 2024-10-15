@@ -1,6 +1,5 @@
 import { Hero } from '@/components/Hero';
 import { News } from '@/components/News/News';
-// import { ProductSection } from '@/components/ProductSection/ProductSection';
 import { NextFixtures } from '@/components/NextFixtures/NextFixtures';
 import { ToasterProvider } from '../../../providers/toast-provider';
 import { Separator } from '@/components/ui/separator';

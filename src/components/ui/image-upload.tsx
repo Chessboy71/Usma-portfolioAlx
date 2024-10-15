@@ -30,6 +30,7 @@ export const ImageUpload: React.FC<ImageUploadProps> = ({
     return null;
   }
 
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const onUpload = (result: any) => {
     onChange(result.info.secure_url);
   };

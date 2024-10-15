@@ -29,6 +29,11 @@ const DashboardNavBar = () => {
       label: 'Orders',
       active: pathname === `/dashboard/orders`,
     },
+    {
+      href: `/dashboard/settings`,
+      label: 'Parametres',
+      active: pathname === `/dashboard/settings`,
+    },
   ];
   return (
     <div className="border-b ">

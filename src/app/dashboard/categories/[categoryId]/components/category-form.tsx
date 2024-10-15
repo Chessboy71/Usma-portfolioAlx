@@ -8,7 +8,6 @@ import { useForm } from 'react-hook-form';
 import { toast } from 'react-hot-toast';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useParams, useRouter } from 'next/navigation';
-import { useEffect } from 'react';
 import { Heading } from '@/components/ui/Heading';
 import { Button } from '@/components/ui/button';
 import { Separator } from '@/components/ui/separator';

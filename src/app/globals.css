@@ -31,10 +31,6 @@ body {
   }
 }
 
-.DialogOverlay {
-  background: white;
-
-}
 
 @layer base {
   :root {

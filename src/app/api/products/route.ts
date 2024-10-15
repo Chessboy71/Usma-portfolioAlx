@@ -1,8 +1,8 @@
+import prismadb from '@/lib/prismadb';
 import { auth } from '@clerk/nextjs/server';
 import { NextResponse } from 'next/server';
 
 export async function POST(req: Request) {
-  console.log('hi');
   try {
     const { userId } = auth();
     const body = await req.json();
@@ -42,7 +42,7 @@ export async function POST(req: Request) {
       return new NextResponse('images are required', { status: 400 });
     }
 
-    const product = await prisma?.product.create({
+    const product = await prismadb.product.create({
       data: {
         name,
         images: {
@@ -71,7 +71,7 @@ export async function GET(req: Request) {
     const categoryId = searchParams.get('categoryId') || undefined;
     const isFeatured = searchParams.get('isFeatured');
 
-    const products = await prisma?.product.findMany({
+    const products = await prismadb.product.findMany({
       where: {
         categoryId,
         isFeatured: isFeatured ? true : undefined,

@@ -6,6 +6,7 @@
     "strict": true,
     "noEmit": true,
     "esModuleInterop": true,
+    "types": ["next/image-types/global"],
     "module": "esnext",
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
