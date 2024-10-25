@@ -3,6 +3,8 @@ import { ProductCard } from '../component/ProductCard';
 import Image from 'next/image';
 import { Separator } from '@/components/ui/separator';
 import { Button } from '@/components/ui/button';
+import OrderForm from '../component/OrderForm';
+import OrderFormWrapper from '../component/OrderFormWrapper';
 
 const ProductPage = async ({ params }: { params: { productId: string } }) => {
   const product = await prismadb.product.findUnique({
@@ -25,17 +27,17 @@ const ProductPage = async ({ params }: { params: { productId: string } }) => {
     take: 4,
   });
   return (
-    <div>
+    <div className="relative">
       <div className="h-[15vh] bg-mainRed w-screen"></div>
-      <div className="h-[90vh] p-12  flex">
+      <div className="lg:h-[90vh] lg:p-12 lg:flex">
         <Image
           src={product?.images[0].url || ''}
           alt="product img"
           height={2000}
           width={2000}
-          className="w-1/2 h-full object-cover rounded-3xl"
+          className="w-full lg:w-1/2 h-full object-cover lg:rounded-3xl"
         />
-        <div className="pl-6 pt-2 w-1/2 flex flex-col justify-between">
+        <div className="p-6 lg:pl-6 lg:pt-2 lg:w-1/2 flex flex-col justify-between">
           <div>
             <h2 className="text-black font-main text-5xl">{product?.name}</h2>
             <h4 className="text-slate-600 font-pop text-lg mt-2 uppercase font-light tracking-[0.2em]">
@@ -54,21 +56,19 @@ const ProductPage = async ({ params }: { params: { productId: string } }) => {
               {product?.price.toNumber()} DA
             </h3>
 
-            <Button
-              className="w-full mt-6 font-pop bg-mainRed mx-0 hover:bg-transparent hover:border-mainBlack hover:border
-         hover:text-mainBlack text-sm">
-              Ajouter au panier
-            </Button>
+            <OrderFormWrapper />
           </div>
         </div>
       </div>
       <Separator />
-      <div className="w-screen px-12 mt-12 pb-12">
-        <h2 className="text-black font-main text-4xl">Check Our Products</h2>
+      <div className="w-screen lg:px-12 mt-6 pb-12">
+        <h2 className="text-black font-main text-2xl pl-2 lg:text-4xl">
+          Check Our Products
+        </h2>
 
         <div className="flex flex-row flex-wrap mt-6">
           {similarProducts.map((item) => (
-            <div key={item.id} className="w-1/4 mb-6">
+            <div key={item.id} className="w-1/2 lg:w-1/4 mb-6">
               <ProductCard
                 key={item.id}
                 title={item.name}

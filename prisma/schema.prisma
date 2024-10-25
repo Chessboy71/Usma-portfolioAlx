@@ -38,7 +38,7 @@ model Product {
   name String
   price Decimal
   images Image[]
-  orderItems OrderItem[]
+  orders Order[] @relation("ProductToOrder")
   isFeatured Boolean @default(false)
   isArchived Boolean @default(false)
   quantity Decimal
@@ -60,7 +60,8 @@ model Image {
 
 model Order {
   id String @id @default(uuid())
-  orderItems OrderItem[]
+  productId String
+  product Product @relation("ProductToOrder", fields: [productId], references: [id])
   progress String @default("en_attente")
   name String @default("")
   phone String @default("")
@@ -69,15 +70,6 @@ model Order {
   updatedAt DateTime @updatedAt
 }
 
-
-model OrderItem {
-  id String @id @default(uuid())
-  orderId String
-  order Order @relation(fields: [orderId], references: [id])
-  productId String
-  product Product @relation(fields: [productId], references: [id])
-  quantity Decimal 
-}
 
 model Settings {
   id String @id @default(uuid())

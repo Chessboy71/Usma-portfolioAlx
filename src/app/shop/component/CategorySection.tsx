@@ -21,7 +21,7 @@ const CategorySection = async () => {
   });
 
   return (
-    <div className="w-screen px-12">
+    <div className="w-screen lg:px-12">
       <div className="relative rounded-3xl">
         <div
           className="h-full w-full bg-black opacity-40
@@ -29,7 +29,7 @@ const CategorySection = async () => {
         <Image
           src={category[1]?.billboard.imageUrl || ''}
           alt="CategoryImg"
-          className="w-full h-[20vw] object-cover z-0 rounded-3xl"
+          className="w-full h-[120px] lg:h-[20vw] object-cover z-0 lg:rounded-3xl"
           width={500}
           height={500}
         />

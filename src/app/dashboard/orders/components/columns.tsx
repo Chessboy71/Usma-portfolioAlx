@@ -12,7 +12,7 @@ export type OrderColumn = {
   address: string;
   progress: string;
   price: string;
-  products: string;
+  product: string;
   createdAt: string;
 };
 
@@ -47,10 +47,6 @@ export const columns: ColumnDef<OrderColumn>[] = [
   {
     accessorKey: 'price',
     header: 'Total Price',
-  },
-  {
-    accessorKey: 'products',
-    header: 'Products',
   },
   {
     accessorKey: 'createdAt',

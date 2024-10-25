@@ -22,7 +22,7 @@ export const ProductCard: React.FC<ProductCardProps> = ({
   const router = useRouter();
   return (
     <div>
-      <div className="relative group h-[20vw] aspect-square overflow-y-hidden rounded-lg">
+      <div className="relative group mx-2 h-[185px] lg:h-[20vw] aspect-square overflow-y-hidden rounded-md">
         <div
           className="absolute bg-mainRed bg-opacity-10 backdrop-blur-md h-full w-full p-6 
         justify-center flex items-center rounded-lg opacity-0 transition-all duration-200 group-hover:opacity-100">
@@ -37,11 +37,11 @@ export const ProductCard: React.FC<ProductCardProps> = ({
           className="h-full w-full object-cover"
           src={img}
           alt="product"
-          height={200}
-          width={200}
+          height={1000}
+          width={1000}
         />
       </div>
-      <div className="flex flex-row flex-wrap font-pop justify-between items-center pt-1 text-black">
+      <div className="flex flex-row flex-wrap font-pop justify-between items-center pt-1 ml-2 text-black">
         <h4 className="text-md  font-bold  flex-grow text-balance w-[18vw]">
           {title}
         </h4>

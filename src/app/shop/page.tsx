@@ -6,7 +6,7 @@ import CategorySection from './component/CategorySection';
 
 export default function Shop() {
   return (
-    <div>
+    <div className="">
       <ShopHero />
       <Featured />
       {/* <Products /> */}
